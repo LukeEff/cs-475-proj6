@@ -204,7 +204,23 @@ main( int argc, char *argv[ ] )
 
 	// 10. setup the arguments to the kernel object:
 
-?????
+    status = clSetKernelArg( Kernel, 0, sizeof(cl_mem), &dA );
+    if( status != CL_SUCCESS )
+        fprintf( stderr, "clSetKernelArg failed (1)\n" );
+
+    status = clSetKernelArg( Kernel, 1, sizeof(cl_mem), &dB );
+    if( status != CL_SUCCESS )
+        fprintf( stderr, "clSetKernelArg failed (2)\n" );
+
+    status = clSetKernelArg( Kernel, 2, sizeof(cl_mem), &dC );
+    if( status != CL_SUCCESS )
+        fprintf( stderr, "clSetKernelArg failed (3)\n" );
+
+    status = clSetKernelArg( Kernel, 3, sizeof(cl_mem), &dMW );
+    if( status != CL_SUCCESS )
+        fprintf( stderr, "clSetKernelArg failed (4)\n" );
+
+//?????
 
 
 	// 11. enqueue the kernel object for execution:
